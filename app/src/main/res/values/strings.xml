@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Pricify</string>
+    <string name="app_description">Industry leading price tracking</string>
     <string name="login_btn">Log In</string>
     <string name="pricify">Pricify</string>
     <string name="signup_btn">Sign Up</string>
@@ -8,4 +9,12 @@
     <string name="settings_btn">Settings</string>
     <string name="logout_btn">Log Out</string>
     <string name="wishlist_btn">WishList1</string>
+    <string name="register_name_hint">Full Name</string>
+    <string name="register_age_hint">Age</string>
+    <string name="password_hint">Password</string>
+    <string name="email_address_hint">Email Address</string>
+    <string name="register_button_text">REGISTER USER</string>
+    <string name="login_button_text">Login</string>
+    <string name="forgot_password_text">Forgot Password?</string>
+    <string name="register_text">Register</string>
 </resources>
