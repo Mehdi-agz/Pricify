@@ -21,8 +21,9 @@
         android:id="@+id/wishlist_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/wishlists_btn"
+        android:layout_marginBottom="100dp"
         android:minWidth="200dp"
+        android:text="@string/wishlists_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +44,7 @@
         android:layout_height="wrap_content"
         android:text="@string/logout_btn"
         android:minWidth="200dp"
-        app:layout_constraintStart_toStartOf="@id/wishlist_btn"
-        app:layout_constraintTop_toBottomOf="@id/wishlist_btn" />
+        app:layout_constraintStart_toStartOf="@id/settings_btn"
+        app:layout_constraintTop_toBottomOf="@id/settings_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
