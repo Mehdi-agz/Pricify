@@ -8,7 +8,6 @@ import com.example.pricify.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var listIntent: Intent
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,18 +15,27 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.loginBtn.setOnClickListener { launchLogin() }
+        binding.signupBtn.setOnClickListener {launchRegister()}
+        binding.btnHome.setOnClickListener {launchHome()}
 
         // showing the back button in action bar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 
     }
-
+    private fun launchHome() {
+        var intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
+    }
     private fun launchLogin() {
-        listIntent = Intent(this, HomeActivity::class.java)
-        startActivity(listIntent)
+        var intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun launchRegister() {
+        var intent = Intent(this, RegisterActivity::class.java)
+        startActivity(intent)
     }
 }
 

@@ -15,7 +15,7 @@ class HomeActivity : AppCompatActivity(){
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.wishlistsBtn.setOnClickListener { lunchWishLists() }
+        binding.wishlistsBtn.setOnClickListener { launchWishLists() }
 
 //        binding.settingsBtn.setOnClickListener { lunchSettings() }
 
@@ -34,7 +34,7 @@ class HomeActivity : AppCompatActivity(){
 //        startActivity(listIntent)
 //    }
 
-    private fun lunchWishLists() {
+    private fun launchWishLists() {
         listIntent = Intent(this, WishListsActivity::class.java)
         startActivity(listIntent)
     }
