@@ -21,8 +21,9 @@
         android:id="@+id/wishlists_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:minWidth="200dp"
+        android:layout_marginBottom="200dp"
+        android:minWidth="150dp"
+        android:minHeight="100dp"
         android:text="@string/wishlists_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +35,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/settings_btn"
-        android:minWidth="200dp"
+        android:minWidth="150dp"
+        android:minHeight="100dp"
         app:layout_constraintStart_toStartOf="@id/wishlists_btn"
         app:layout_constraintTop_toBottomOf="@id/wishlists_btn" />
 
@@ -43,7 +45,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/logout_btn"
-        android:minWidth="200dp"
+        android:minWidth="150dp"
+        android:minHeight="100dp"
         app:layout_constraintStart_toStartOf="@id/settings_btn"
         app:layout_constraintTop_toBottomOf="@id/settings_btn" />
 
