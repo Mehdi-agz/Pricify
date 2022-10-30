@@ -7,4 +7,5 @@
     <string name="wishlists_btn">WishLists</string>
     <string name="settings_btn">Settings</string>
     <string name="logout_btn">Log Out</string>
+    <string name="wishlist_btn">WishList1</string>
 </resources>
