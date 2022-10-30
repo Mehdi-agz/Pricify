@@ -3,6 +3,8 @@ package com.example.pricify
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.pricify.SWishListActivity
+import com.example.pricify.adaptor.WishlistsAdaptor
 import com.example.pricify.databinding.ActivityWishlistsBinding
 
 class WishListsActivity : AppCompatActivity() {
@@ -17,7 +19,11 @@ class WishListsActivity : AppCompatActivity() {
         binding = ActivityWishlistsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.wishlistBtn.setOnClickListener { launchWishlist() }
+        binding.wishlistsVerticalRecyclerView.adapter = WishlistsAdaptor(
+            applicationContext
+        )
+
+//        binding.single_wishlist_btn.setOnClickListener { launchWishlist() }
 
         // showing the back button in action bar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

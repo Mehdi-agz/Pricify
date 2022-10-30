@@ -8,4 +8,6 @@
     <string name="settings_btn">Settings</string>
     <string name="logout_btn">Log Out</string>
     <string name="wishlist_btn">WishList1</string>
+    <string name="wishlist_name">This is a wishlist</string>
+    <string name="item_name">ItemName</string>
 </resources>

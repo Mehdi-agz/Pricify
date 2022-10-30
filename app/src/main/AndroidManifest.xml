@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pricify"
         tools:targetApi="31">
+        <activity android:name=".SWishListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".WishListsActivity" />
+        </activity>
         <activity android:name=".WishListsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
