@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pricify"
+        android:text="@string/app_name"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/login_btn"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,5 +40,15 @@
         android:text="@string/signup_btn"
         app:layout_constraintStart_toStartOf="@id/login_btn"
         app:layout_constraintTop_toBottomOf="@id/login_btn"/>
+
+    <Button
+        android:id="@+id/btn_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="100dp"
+        android:minHeight="50dp"
+        android:text="Home"
+        app:layout_constraintStart_toStartOf="@id/signup_btn"
+        app:layout_constraintTop_toBottomOf="@id/signup_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
