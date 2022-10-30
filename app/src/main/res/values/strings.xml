@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Pricify</string>
-    <string name="loginButton">Log In</string>
+    <string name="login_btn">Log In</string>
     <string name="pricify">Pricify</string>
-    <string name="SignUp">Sign Up</string>
+    <string name="signup_btn">Sign Up</string>
+    <string name="home_welcome">Welcome To Pricify</string>
+    <string name="wishlists_btn">WishLists</string>
+    <string name="settings_btn">Settings</string>
+    <string name="logout_btn">Log Out</string>
 </resources>
