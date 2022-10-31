@@ -27,7 +27,7 @@
     <string name="item_count">Item Count: %1$s</string>
     <string name="total_price">Total Price: $%1$s</string>
     <string name="item_price">Price: $%1$s</string>
-    <string name="price_drop">Price Change: $%1$s</string>
+    <string name="price_drop">Price Drop: $%1$s</string>
 
 
 
