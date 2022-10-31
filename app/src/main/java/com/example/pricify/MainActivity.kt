@@ -3,6 +3,7 @@ package com.example.pricify
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
 import com.example.pricify.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -17,20 +18,20 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.loginBtn.setOnClickListener { launchLogin() }
-        binding.signupBtn.setOnClickListener {launchRegister()}
+        binding.signupBtn.setOnClickListener { launchRegister() }
 
         // showing the back button in action bar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        if(FirebaseAuth.getInstance().currentUser!=null){
+        if (FirebaseAuth.getInstance().currentUser != null) {
             launchHome();
             return;
         }
 
-
     }
+
     private fun launchHome() {
         var intent = Intent(this, HomeActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         startActivity(intent)
     }
     private fun launchLogin() {

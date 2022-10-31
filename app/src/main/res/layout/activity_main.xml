@@ -36,7 +36,7 @@
 
     <Button
         android:id="@+id/login_btn"
-        android:layout_width="380dp"
+        android:layout_width="280dp"
         android:layout_height="70dp"
         android:layout_marginTop="125dp"
         android:backgroundTint="@color/colorAccent"
@@ -51,7 +51,7 @@
 
     <Button
         android:id="@+id/signup_btn"
-        android:layout_width="380dp"
+        android:layout_width="280dp"
         android:layout_height="70dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/colorAccent"

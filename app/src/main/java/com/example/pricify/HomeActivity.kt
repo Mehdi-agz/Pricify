@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.view.KeyEvent
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -51,12 +52,12 @@ class HomeActivity : AppCompatActivity(){
             }
 
         })
-        // Enable up button for backward navigation
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
     }
 
     private fun launchMain() {
         var intent = Intent(this, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         startActivity(intent)
     }
 
