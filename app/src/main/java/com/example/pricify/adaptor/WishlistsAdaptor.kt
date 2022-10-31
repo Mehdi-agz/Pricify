@@ -30,14 +30,15 @@ class WishlistsAdaptor(
         init {
             button.setOnClickListener {
                 val listIntent = Intent(view!!.context, SWishListActivity::class.java)
+                var index = 0
                 for (wishlist : Wishlist in DataSource.wishlists) {
                     if (wishlist.name == button.text) {
-
                         listIntent.putExtra("wishlistName", wishlist.name)
-
+                        listIntent.putExtra("index", index)
                         view.context.startActivity(listIntent)
-                        break;
+                        break
                     }
+                    index += 1
                 }
             }
         }
