@@ -44,11 +44,11 @@
 
         <TextView
             android:id="@+id/item_name"
-            android:layout_width="350dp"
-            android:layout_height="28dp"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
             android:gravity="center"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/item_price"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,11 +58,10 @@
 
         <TextView
             android:id="@+id/item_price_drop"
-            android:layout_width="37dp"
-            android:layout_height="28dp"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.7"
@@ -73,16 +72,14 @@
         <TextView
             android:id="@+id/item_price"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/item_name"
-            app:layout_constraintVertical_bias="0.213"
             tools:text="125" />
 
 

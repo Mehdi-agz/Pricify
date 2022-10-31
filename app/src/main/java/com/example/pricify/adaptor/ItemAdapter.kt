@@ -16,10 +16,11 @@ class ItemAdapter(
     private val context: Context?,
     public val name: String,
     private val index: Int,
-    val wishlists: List<Wishlist> = DataSource.wishlists
+    val wishlists: List<Wishlist> = DataSource.wishlists,
 
 
-    ): RecyclerView.Adapter<ItemAdapter.WishItemViewHolder>() {
+): RecyclerView.Adapter<ItemAdapter.WishItemViewHolder>() {
+    private val dataset = DataSource.wishlists
 
 
     class WishItemViewHolder(view: View?): RecyclerView.ViewHolder(view!!) {
@@ -35,10 +36,12 @@ class ItemAdapter(
     }
 
     override fun onBindViewHolder(holder: WishItemViewHolder, position: Int) {
+        val item = dataset[index].items[position]
+        val resources = context?.resources
         holder.item_name.text = wishlists[index].items[position].name
         holder.item_image.setImageResource(wishlists[index].items[position].imageResourceId)
-        holder.item_price.text = wishlists[index].items[position].price.toString()
-        holder.item_price_drop.text = wishlists[index].items[position].priceDrop.toString()
+        holder.item_price.text = resources?.getString(R.string.item_price, item.price)
+        holder.item_price_drop.text = resources?.getString(R.string.price_drop, item.priceDrop)
     }
 
     override fun getItemCount(): Int {
