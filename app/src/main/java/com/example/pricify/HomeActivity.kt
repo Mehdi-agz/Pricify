@@ -1,13 +1,9 @@
 package com.example.pricify
 
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pricify.databinding.ActivityHomeBinding
-import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : AppCompatActivity(){
 
@@ -22,6 +18,9 @@ class HomeActivity : AppCompatActivity(){
         binding.wishlistsBtn.setOnClickListener { launchWishLists() }
 
         binding.logoutBtn.setOnClickListener { logOut() }
+        binding.settingsBtn.setOnClickListener { lunchSettings() }
+
+//        binding.logoutBtn.setOnClickListener { lunchLogOut() }
 
         // Enable up button for backward navigation
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -57,6 +56,10 @@ class HomeActivity : AppCompatActivity(){
 
         private fun launchMain(){
         listIntent = Intent(this, MainActivity::class.java)
+        startActivity(listIntent)
+    }
+    private fun lunchSettings() {
+        listIntent = Intent(this, SettingsActivity::class.java)
         startActivity(listIntent)
     }
 
