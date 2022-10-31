@@ -50,7 +50,8 @@ class ProfileActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Something wrong happened! " + error!!.message, Toast.LENGTH_LONG).show()
             }
 
-
         })
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
     }
 }
