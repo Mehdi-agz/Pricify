@@ -20,8 +20,6 @@ class MainActivity : AppCompatActivity() {
         binding.loginBtn.setOnClickListener { launchLogin() }
         binding.signupBtn.setOnClickListener { launchRegister() }
 
-        // showing the back button in action bar
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         if (FirebaseAuth.getInstance().currentUser != null) {
             launchHome();
             return;
