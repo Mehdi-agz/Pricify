@@ -24,6 +24,11 @@
     <string name="acc_privacy_btn">Account and Privacy</string>
     <string name="orders_btn">Orders</string>
     <string name="payment_btn">Payment Methods</string>
+    <string name="profileNameTitle">Name:</string>
+    <string name="profileName" />
+    <string name="profileEmailAddress" />
+    <string name="profileEmailAddressTitle">Email Address:</string>
+    <string name="profileGreeting" />
     <string name="item_count">Item Count: %1$s</string>
     <string name="total_price">Total Price: $%1$s</string>
     <string name="item_price">Price: $%1$s</string>

@@ -16,11 +16,16 @@ class SettingsActivity : AppCompatActivity() {
 
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.profileBtn.setOnClickListener {launchProfile()}
 
         // showing the back button in action bar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 
+    }
+    private fun launchProfile() {
+        var intent = Intent(this, ProfileActivity::class.java)
+        startActivity(intent)
     }
 }
 
