@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+
+    <TextView
+        android:id="@+id/greeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/profileGreeting"
+        />
+
+    <TextView
+        android:id="@+id/emailAddressTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/greeting"
+        app:layout_constraintLeft_toLeftOf="@id/greeting"
+        android:layout_marginTop="20dp"
+        android:text="@string/profileEmailAddressTitle"
+        />
+
+    <TextView
+        android:id="@+id/emailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/emailAddressTitle"
+        app:layout_constraintLeft_toLeftOf="@id/emailAddressTitle"
+        android:layout_marginLeft="30dp"
+        android:text="@string/profileEmailAddress"
+        />
+
+    <TextView
+        android:id="@+id/nameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/emailAddress"
+        app:layout_constraintLeft_toLeftOf="@id/greeting"
+        android:layout_marginTop="20dp"
+        android:text="@string/profileNameTitle"
+        />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/nameTitle"
+        app:layout_constraintLeft_toLeftOf="@id/nameTitle"
+        android:layout_marginLeft="30dp"
+        android:text="@string/profileName"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

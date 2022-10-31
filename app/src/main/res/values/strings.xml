@@ -24,4 +24,9 @@
     <string name="acc_privacy_btn">Account and Privacy</string>
     <string name="orders_btn">Orders</string>
     <string name="payment_btn">Payment Methods</string>
+    <string name="profileNameTitle">Name:</string>
+    <string name="profileName" />
+    <string name="profileEmailAddress" />
+    <string name="profileEmailAddressTitle">Email Address:</string>
+    <string name="profileGreeting" />
 </resources>
