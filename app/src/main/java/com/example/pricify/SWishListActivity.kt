@@ -6,10 +6,10 @@ import android.os.Bundle
 import android.widget.ImageView
 import com.example.pricify.databinding.ActivityItemsBinding
 import com.example.pricify.adaptor.ItemAdapter
-import com.example.pricify.databinding.WishitemListBinding
+
 
 class SWishListActivity : AppCompatActivity() {
-    private lateinit var binding: WishitemListBinding
+    private lateinit var binding: ActivityItemsBinding
     private lateinit var listIntent: Intent
 
     private lateinit var name : String
@@ -24,11 +24,11 @@ class SWishListActivity : AppCompatActivity() {
         index = intent.getIntExtra("index", 1)
 
 
-        binding = WishitemListBinding.inflate(layoutInflater)
+        binding = ActivityItemsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // passes concert data to new recycler view
-        binding.wishRecyclerView.adapter = ItemAdapter(
+        binding.itemsVerticalRecyclerView.adapter = ItemAdapter(
             applicationContext, name, index
         )
 
