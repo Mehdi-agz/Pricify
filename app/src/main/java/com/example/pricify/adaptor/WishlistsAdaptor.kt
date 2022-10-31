@@ -26,7 +26,8 @@ class WishlistsAdaptor(
     // initialze view elements
     class WishlistsCardViewHolder(view: View?): RecyclerView.ViewHolder(view!!){
         val button: Button = view!!.findViewById(R.id.single_wishlist_btn)
-
+        val item_count: TextView = view!!.findViewById(R.id.item_count)
+        val total_price: TextView = view!!.findViewById(R.id.total_price)
         init {
             button.setOnClickListener {
                 val listIntent = Intent(view!!.context, SWishListActivity::class.java)
@@ -34,6 +35,8 @@ class WishlistsAdaptor(
                 for (wishlist : Wishlist in DataSource.wishlists) {
                     if (wishlist.name == button.text) {
                         listIntent.putExtra("wishlistName", wishlist.name)
+                        listIntent.putExtra("wishListCount", wishlist.item_count)
+                        listIntent.putExtra("wishListPrice", wishlist.total_price)
                         listIntent.putExtra("index", index)
                         view.context.startActivity(listIntent)
                         break
@@ -52,8 +55,12 @@ class WishlistsAdaptor(
     }
 
     override fun onBindViewHolder(holder: WishlistsCardViewHolder, position: Int) {
-        val artist = dataset[position]
-        holder.button.text = artist.name
+        val wishlist = dataset[position]
+        val resources = context?.resources
+
+        holder.button.text = wishlist.name
+        holder.item_count.text = resources?.getString(R.string.item_count, wishlist.item_count)
+        holder.total_price.text = resources?.getString(R.string.total_price, wishlist.total_price)
     }
 
     override fun getItemCount(): Int {
