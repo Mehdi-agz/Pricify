@@ -17,9 +17,9 @@ object DataSource {
         Wishlist(
             "Tshirts",
             items = listOf(
-                Item(R.drawable.nikeshirt0,"Nike Shirt", 20, 10)
-//                item(R.drawable.Nikeshirt1,"Nike shirt", 125, 25),
-//                item(R.drawable.Nikeshirt2,"Nike shirt", 125, 25),
+                Item(R.drawable.nikeshirt0,"Mens Nike Shirt", 20, 10),
+                Item(R.drawable.adidasshit0,"MEN'S ADIDAS ORIGINALS ITASCA", 50, 5),
+                Item(R.drawable.adidasshirt1,"MEN'S ADIDAS GERMANY JERSEY", 65, 0),
             )
         ),
 //        Wishlist(
