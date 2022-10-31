@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.loginBtn.setOnClickListener { launchLogin() }
         binding.signupBtn.setOnClickListener {launchRegister()}
-        binding.btnHome.setOnClickListener {launchHome()}
 
         // showing the back button in action bar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

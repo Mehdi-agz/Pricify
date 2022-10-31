@@ -7,48 +7,61 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textSize="68sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="58dp"
+        />
+
+    <TextView
+        android:id="@+id/bannerDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/login_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9" />
+        android:text="@string/app_description"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/banner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
 
     <Button
         android:id="@+id/login_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
-        android:minWidth="100dp"
-        android:minHeight="50dp"
-        android:text="@string/login_btn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="380dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="125dp"
+        android:backgroundTint="@color/colorAccent"
+        android:text="@string/login_button_text"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bannerDescription"
+        />
 
     <Button
         android:id="@+id/signup_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:minWidth="100dp"
-        android:minHeight="50dp"
+        android:layout_width="380dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/colorAccent"
         android:text="@string/signup_btn"
-        app:layout_constraintStart_toStartOf="@id/login_btn"
-        app:layout_constraintTop_toBottomOf="@id/login_btn"/>
-
-    <Button
-        android:id="@+id/btn_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:minWidth="100dp"
-        android:minHeight="50dp"
-        android:text="Home"
-        app:layout_constraintStart_toStartOf="@id/signup_btn"
-        app:layout_constraintTop_toBottomOf="@id/signup_btn" />
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
