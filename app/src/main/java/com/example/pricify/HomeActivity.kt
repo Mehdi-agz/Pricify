@@ -17,7 +17,7 @@ class HomeActivity : AppCompatActivity(){
 
         binding.wishlistsBtn.setOnClickListener { launchWishLists() }
 
-//        binding.settingsBtn.setOnClickListener { lunchSettings() }
+        binding.settingsBtn.setOnClickListener { lunchSettings() }
 
 //        binding.logoutBtn.setOnClickListener { lunchLogOut() }
 
@@ -29,10 +29,10 @@ class HomeActivity : AppCompatActivity(){
 //        TODO("Not yet implemented")
 //    }
 
-//    private fun lunchSettings() {
-//        listIntent = Intent(this, SettingsActivity::class.java)
-//        startActivity(listIntent)
-//    }
+    private fun lunchSettings() {
+        listIntent = Intent(this, SettingsActivity::class.java)
+        startActivity(listIntent)
+    }
 
     private fun launchWishLists() {
         listIntent = Intent(this, WishListsActivity::class.java)

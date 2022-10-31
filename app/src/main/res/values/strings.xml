@@ -19,4 +19,9 @@
     <string name="register_text">Register</string>
     <string name="wishlist_name">This is a wishlist</string>
     <string name="item_name">ItemName</string>
+    <string name="profile_btn">Profile</string>
+    <string name="notifications_btn">Notifications</string>
+    <string name="acc_privacy_btn">Account and Privacy</string>
+    <string name="orders_btn">Orders</string>
+    <string name="payment_btn">Payment Methods</string>
 </resources>
