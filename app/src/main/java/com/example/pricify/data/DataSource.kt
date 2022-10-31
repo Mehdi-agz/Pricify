@@ -20,6 +20,7 @@ object DataSource {
                 Item(R.drawable.nikeshirt0,"Mens Nike Shirt", 20, 10),
                 Item(R.drawable.adidasshit0,"MEN'S ADIDAS ORIGINALS ITASCA", 50, 5),
                 Item(R.drawable.adidasshirt1,"MEN'S ADIDAS GERMANY JERSEY", 65, 0),
+                Item(R.drawable.adidasshirt2,"MEN'S NIKE SMILING SWOOSH T-SHIRT", 20, 10),
             )
         ),
 //        Wishlist(
