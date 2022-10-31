@@ -25,10 +25,6 @@ class RegisterActivity: AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
         binding.banner.setOnClickListener {launchMain()}
         binding.register.setOnClickListener {registeruser()}
-        binding.fullName.setOnClickListener {}
-        binding.email.setOnClickListener {}
-        binding.password.setOnClickListener {}
-        binding.progressBar.setOnClickListener {}
 
     }
 
