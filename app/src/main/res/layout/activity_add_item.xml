@@ -25,7 +25,7 @@
     android:padding="16dp">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/name_label"
+        android:id="@+id/item_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/item_name"
@@ -47,7 +47,7 @@
         android:hint="@string/item_url"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_label">
+        app:layout_constraintTop_toBottomOf="@id/item_name">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/item_url_input"
@@ -57,20 +57,54 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/item_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_price"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_url">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/item_price_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textAutoComplete" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.checkbox.MaterialCheckBox
-        android:id="@+id/monitor_price_checkbox"
+        android:id="@+id/checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/monitor_price"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/item_url"/>
+        app:layout_constraintTop_toBottomOf="@id/item_price" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/item_price_drop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_price_drop"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkbox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/price_drop_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textAutoComplete" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/monitor_price_checkbox"
+        app:layout_constraintTop_toBottomOf="@id/item_price_drop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
