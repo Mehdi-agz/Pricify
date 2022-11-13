@@ -17,8 +17,8 @@
     <string name="login_button_text">Login</string>
     <string name="forgot_password_text">Forgot Password?</string>
     <string name="register_text">Register</string>
-    <string name="wishlist_name">This is a wishlist</string>
-    <string name="item_name">ItemName</string>
+    <string name="wishlist_name">WishList Name</string>
+    <string name="item_name">Item Name</string>
     <string name="profile_btn">Profile</string>
     <string name="notifications_btn">Notifications</string>
     <string name="acc_privacy_btn">Account and Privacy</string>
@@ -35,6 +35,9 @@
     <string name="price_drop">Price Drop: $%1$s</string>
     <string name="add_new_item">Add New Item</string>
     <string name="add_new_wishlist">Add New Wishlist</string>
+    <string name="save">Save</string>
+    <string name="item_url">Item URL</string>
+    <string name="monitor_price">Monitor Price Change</string>
 
 
 </resources>

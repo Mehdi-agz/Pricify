@@ -32,9 +32,16 @@ class SWishListActivity : AppCompatActivity() {
             applicationContext, name, index
         )
 
+        binding.addItem.setOnClickListener { launchAddItem() }
+
         // Enable up button for backward navigation
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+    }
+
+    private fun launchAddItem() {
+        listIntent = Intent(this, AddItemActivity::class.java)
+        startActivity(listIntent)
     }
 
 }

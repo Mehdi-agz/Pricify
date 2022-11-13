@@ -25,10 +25,23 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeActivity" />
         </activity>
+        <activity android:name=".AddItemActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SWishListActivity" />
+        </activity>
         <activity android:name=".SWishListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".WishListsActivity" />
+        </activity>
+        <activity
+            android:name=".AddWishListActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".WishListsActivity"
+                />
         </activity>
         <activity android:name=".WishListsActivity">
             <meta-data
