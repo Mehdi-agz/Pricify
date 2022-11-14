@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener
 class AddItemActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddItemBinding
-    private lateinit var name:String
+    private lateinit var wishlistName:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,8 +37,7 @@ class AddItemActivity : AppCompatActivity() {
 //                binding.priceDropText.visibility = View.GONE
             }
         }
-        name = intent.getStringExtra("WishlistName").toString()
-        Toast.makeText(this, name, Toast.LENGTH_LONG).show()
+        wishlistName = intent.getStringExtra("WishlistName").toString()
 
         binding.saveBtn.setOnClickListener { addItem() }
 
@@ -49,7 +48,7 @@ class AddItemActivity : AppCompatActivity() {
         var itemUrl:String = binding.itemUrlInput.text.toString().trim()
         var imageUrl:String = binding.itemImageUrlInput.text.toString().trim()
         var price:Double = binding.itemPriceInput.text.toString().trim().toDouble()
-        var priceDrop:Double = if(binding.checkbox.isChecked) -1.0 else binding.priceDropInput.text.toString().trim().toDouble()
+        var targetPriceDrop:Double = if(binding.checkbox.isChecked) -1.0 else binding.priceDropInput.text.toString().trim().toDouble()
 
         if(name.isEmpty()){
             binding.nameInput.error = "Item name is required!";
@@ -71,35 +70,35 @@ class AddItemActivity : AppCompatActivity() {
             binding.nameInput.requestFocus();
             return;
         }
-        if(priceDrop==0.0){
+        if(targetPriceDrop==0.0){
             binding.nameInput.error = "Valid price drop is required!";
             binding.nameInput.requestFocus();
             return;
         }
 
-        val userWishlistsRef = FirebaseDatabase.getInstance().getReference("Wishlists").child(
-            FirebaseAuth.getInstance().currentUser!!.uid).child(name).ref
+        val userWishlistRef = FirebaseDatabase.getInstance().getReference("Wishlists").child(
+            FirebaseAuth.getInstance().currentUser!!.uid).child(wishlistName).ref
         val context = this
-        userWishlistsRef.addListenerForSingleValueEvent(object : ValueEventListener {
+        userWishlistRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.hasChild(name)) {
-                    binding.nameInput.error = "Wishlist name already exists! Enter a unique identifier!";
+                    binding.nameInput.error = "Item name already exists! Enter a unique identifier!";
                     binding.nameInput.requestFocus();
                     return;
                 }else{
                     binding.progressBar.visibility = View.VISIBLE
-                    var wishList = Wishlist(binding.nameInput.text.toString(),listOf<Item>())
-                    val newWishlist = FirebaseDatabase.getInstance().getReference("Wishlists").child(
-                        FirebaseAuth.getInstance().currentUser!!.uid).child(wishList.name)
-                    newWishlist.setValue(wishList).addOnCompleteListener{ task->
+                    var item = Item(0, name, itemUrl,price,0.0, targetPriceDrop, imageUrl)
+                    val newItem = FirebaseDatabase.getInstance().getReference("Wishlists").child(
+                        FirebaseAuth.getInstance().currentUser!!.uid).child(wishlistName).child(item.name)
+                    newItem.setValue(item).addOnCompleteListener{ task->
                         if (task.isSuccessful) {
                             Toast.makeText(
                                 context,
-                                "Wishlist successfully created!",
+                                "Item added successfully!",
                                 Toast.LENGTH_LONG
                             ).show()
                             binding.progressBar.visibility = View.GONE
-                            //launchWishlists()
+                            finish()
                         } else {
                             Toast.makeText(
                                 context,

@@ -6,6 +6,9 @@ data class Item (
     @DrawableRes val imageResourceId: Int,
     val name: String,
     val url: String,
-    val price: Int,
-    val priceDrop: Int,
+    val price: Double,
+    val priceDrop: Double,
+    val targetPriceDrop: Double,
+    val imageUrl:String,
+
 )

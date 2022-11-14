@@ -9,9 +9,9 @@ object DataSource {
         Wishlist(
             "Shoes",
             items = listOf(
-                Item(R.drawable.airmax0,"Nike Air Max", "https://www.finishline.com/store/product/womens-nike-air-vapormax-plus-running-shoes/prod2772256?styleId=DZ5204&colorId=500", 210, 0),
-                Item(R.drawable.airmax1,"Nike Colorful Jordan's", "https://www.finishline.com/store/product/womens-nike-air-vapormax-plus-running-shoes/prod2772256?styleId=DQ8588&colorId=800",210, 80),
-                Item(R.drawable.airmax2,"NIKE AIR VAPORMAX PLUS", "https://www.finishline.com/store/product/womens-nike-air-vapormax-plus-running-shoes/prod2772256?styleId=DX2746&colorId=400",210, 0),
+                Item(R.drawable.airmax0,"Nike Air Max", "https://www.finishline.com/store/product/womens-nike-air-vapormax-plus-running-shoes/prod2772256?styleId=DZ5204&colorId=500", 210.0, 0.0, 50.0, ""),
+                Item(R.drawable.airmax1,"Nike Colorful Jordan's", "https://www.finishline.com/store/product/womens-nike-air-vapormax-plus-running-shoes/prod2772256?styleId=DQ8588&colorId=800",210.0, 80.0, 50.0, ""),
+                Item(R.drawable.airmax2,"NIKE AIR VAPORMAX PLUS", "https://www.finishline.com/store/product/womens-nike-air-vapormax-plus-running-shoes/prod2772256?styleId=DX2746&colorId=400",210.0, 0.0, 50.0, ""),
             )
         ),
 //        Wishlist(

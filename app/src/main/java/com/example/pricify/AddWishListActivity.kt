@@ -58,7 +58,7 @@ class AddWishListActivity : AppCompatActivity() {
                                 Toast.LENGTH_LONG
                             ).show()
                             binding.progressBar.visibility = View.GONE
-                            launchWishlists()
+                            finish()
                         } else {
                             Toast.makeText(
                                 context,
@@ -77,10 +77,5 @@ class AddWishListActivity : AppCompatActivity() {
 
 
 
-    }
-
-    private fun launchWishlists(){
-        var intent = Intent(this, WishListsActivity::class.java)
-        startActivity(intent)
     }
 }
