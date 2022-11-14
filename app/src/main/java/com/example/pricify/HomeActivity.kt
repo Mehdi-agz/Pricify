@@ -11,8 +11,11 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.pricify.data.DataSource
 import com.example.pricify.databinding.ActivityHomeBinding
+import com.example.pricify.model.Item
 import com.example.pricify.model.User
+import com.example.pricify.model.Wishlist
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
@@ -28,12 +31,10 @@ class HomeActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.wishlistsBtn.setOnClickListener { launchWishLists() }
 
         binding.logoutBtn.setOnClickListener { logOut() }
         binding.settingsBtn.setOnClickListener { lunchSettings() }
-
         greeting = findViewById(R.id.greetingMessage)
         user = FirebaseAuth.getInstance().currentUser!!
         reference = FirebaseDatabase.getInstance().getReference("Users");
@@ -56,6 +57,8 @@ class HomeActivity : AppCompatActivity(){
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
     }
+
+
 
     private fun launchMain() {
         var intent = Intent(this, MainActivity::class.java)

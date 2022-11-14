@@ -48,9 +48,8 @@ class AddWishListActivity : AppCompatActivity() {
                     return;
                 }else{
                     binding.progressBar.visibility = View.VISIBLE
-                    var wishList = Wishlist(binding.nameInput.text.toString(),listOf<Item>())
-                    val newWishlist = FirebaseDatabase.getInstance().getReference("Wishlists").child(FirebaseAuth.getInstance().currentUser!!.uid).child(wishList.name)
-                    newWishlist.setValue(wishList).addOnCompleteListener{ task->
+                    val newWishlist = FirebaseDatabase.getInstance().getReference("Wishlists").child(FirebaseAuth.getInstance().currentUser!!.uid).child(name).child("name")
+                    newWishlist.setValue(name).addOnCompleteListener{ task->
                         if (task.isSuccessful) {
                             Toast.makeText(
                                 context,

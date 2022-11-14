@@ -19,7 +19,7 @@ class WishlistsAdaptor(
 
 ): RecyclerView.Adapter<WishlistsAdaptor.WishlistsCardViewHolder>() {
 
-    private val dataset = DataSource.wishlists
+    private var dataset = mutableListOf<Wishlist>()
 
 
 
@@ -29,6 +29,7 @@ class WishlistsAdaptor(
         val item_count: TextView = view!!.findViewById(R.id.item_count)
         val total_price: TextView = view!!.findViewById(R.id.total_price)
         init {
+            println("WishlistCardViewHoler view holder!")
             button.setOnClickListener {
                 val listIntent = Intent(view!!.context, SWishListActivity::class.java)
                 var index = 0
@@ -47,7 +48,14 @@ class WishlistsAdaptor(
         }
     }
 
+    fun updateItems(){
+        println("Updating items holder!")
+        dataset.clear()
+        dataset=DataSource.wishlists
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WishlistsCardViewHolder {
+        println("Creating view holder!")
         return WishlistsCardViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.wishlists_vertical_list,
                 parent, false)
