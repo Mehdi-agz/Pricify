@@ -2,18 +2,27 @@ package com.example.pricify.adaptor
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
+import android.os.AsyncTask
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.widget.AppCompatDrawableManager.get
+import androidx.appcompat.widget.ResourceManagerInternal.get
 import androidx.core.content.ContextCompat.startActivity
+import androidx.lifecycle.ViewTreeLifecycleOwner.get
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pricify.R
 import com.example.pricify.SWishListActivity
 import com.example.pricify.data.DataSource
 import com.example.pricify.data.DataSource.wishlists
 import com.example.pricify.model.Wishlist
+import com.squareup.picasso.Picasso
+import java.lang.reflect.Array.get
 
 
 class ItemAdapter(
@@ -45,10 +54,14 @@ class ItemAdapter(
         val item = dataset[index].items[position]
         val resources = context?.resources
         holder.item_name.text = wishlists[index].items[position].name
-        holder.item_image.setImageResource(wishlists[index].items[position].imageResourceId)
+//        holder.item_image.setImageResource(wishlists[index].items[position].imageResourceId)
 //        holder.item_url.text = wishlists[index].items[position].url
         holder.item_price.text = resources?.getString(R.string.item_price, item.price)
         holder.item_price_drop.text = resources?.getString(R.string.price_drop, item.priceDrop)
+
+        val url = wishlists[index].items[position].imageUrl
+        Picasso.with(holder.itemView.context).load(url).into(holder.item_image)
+
         holder.item_image.setOnClickListener {
             val myUrl = Intent(Intent.ACTION_VIEW)
             myUrl.data = Uri.parse(item.url)
@@ -59,4 +72,5 @@ class ItemAdapter(
     override fun getItemCount(): Int {
         return wishlists[index].items.size
     }
+
 }
