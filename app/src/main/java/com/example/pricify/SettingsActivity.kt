@@ -27,8 +27,6 @@ class SettingsActivity : AppCompatActivity() {
 
         // showing the back button in action bar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-
     }
 
     private fun launchAccount() {
@@ -45,7 +43,7 @@ class SettingsActivity : AppCompatActivity() {
 
     private fun launchProfile() {
         scaler(binding.profileBtn)
-        var intent = Intent(this, ProfileActivity::class.java)
+        val intent = Intent(this, ProfileActivity::class.java)
         startActivity(intent)
     }
 
