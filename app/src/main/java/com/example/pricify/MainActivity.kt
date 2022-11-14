@@ -1,12 +1,16 @@
 package com.example.pricify
 
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
+import android.view.View
+import android.widget.Button
 import com.example.pricify.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,13 +37,23 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
     private fun launchLogin() {
+        scaler(binding.loginBtn)
         var intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
     }
 
     private fun launchRegister() {
+        scaler(binding.signupBtn)
         var intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
+    }
+
+    private fun scaler(btn: Button) {
+        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X,  0.75f, 1f, 1f)
+        val scaleY =  PropertyValuesHolder.ofFloat(View.SCALE_Y,  1.25f, 1f, 1f)
+        val animator = ObjectAnimator.ofPropertyValuesHolder(btn, scaleX, scaleY)
+        animator.start()
+
     }
 }
 

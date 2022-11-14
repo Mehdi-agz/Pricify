@@ -38,23 +38,13 @@
         />
 
     <Button
-        android:id="@+id/notifications_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/notifications_btn"
-        android:minWidth="250dp"
-        app:layout_constraintStart_toStartOf="@id/payment_btn"
-        app:layout_constraintTop_toBottomOf="@id/payment_btn"
-        />
-
-    <Button
         android:id="@+id/acc_privacy_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/acc_privacy_btn"
         android:minWidth="250dp"
-        app:layout_constraintStart_toStartOf="@id/notifications_btn"
-        app:layout_constraintTop_toBottomOf="@id/notifications_btn"
+        app:layout_constraintStart_toStartOf="@id/payment_btn"
+        app:layout_constraintTop_toBottomOf="@id/payment_btn"
         />
 
 

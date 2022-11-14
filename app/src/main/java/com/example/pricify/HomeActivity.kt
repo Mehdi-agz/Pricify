@@ -1,15 +1,16 @@
 package com.example.pricify
 
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.view.KeyEvent
+import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
 import com.example.pricify.databinding.ActivityHomeBinding
 import com.example.pricify.model.User
 import com.google.firebase.auth.FirebaseAuth
@@ -91,17 +92,28 @@ class HomeActivity : AppCompatActivity(){
     }
 
     private fun logOut(){
+        scaler(binding.logoutBtn)
         logoutConfirmationAlert()!!.show()
     }
 
 
     private fun lunchSettings() {
+        scaler(binding.settingsBtn)
         var intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)
     }
 
     private fun launchWishLists() {
+        scaler(binding.wishlistsBtn)
         var intent = Intent(this, WishListsActivity::class.java)
         startActivity(intent)
+    }
+
+    private fun scaler(btn: Button) {
+        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X,  1.5f, 1f, 1f)
+        val scaleY =  PropertyValuesHolder.ofFloat(View.SCALE_Y,  0.75f, 1f, 1f)
+        val animator = ObjectAnimator.ofPropertyValuesHolder(btn, scaleX, scaleY)
+        animator.start()
+
     }
 }
