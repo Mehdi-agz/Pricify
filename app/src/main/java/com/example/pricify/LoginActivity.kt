@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
+import android.view.View.OnFocusChangeListener
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pricify.databinding.ActivityLoginBinding
@@ -27,7 +29,25 @@ class LoginActivity: AppCompatActivity(){
         binding.register.setOnClickListener {launchRegister()}
         binding.login.setOnClickListener{login()}
 
+        binding.email.onFocusChangeListener = OnFocusChangeListener { v, hasFocus ->
+            if (!hasFocus) {
+                hideKeyboard(v)
+            }
+        }
+
+        binding.password.onFocusChangeListener = OnFocusChangeListener { v, hasFocus ->
+            if (!hasFocus) {
+                hideKeyboard(v)
+            }
+        }
+
     }
+
+    fun hideKeyboard(view: View) {
+        val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+    }
+
     public override fun onStart() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
@@ -37,6 +57,8 @@ class LoginActivity: AppCompatActivity(){
     private fun login(){
         var email:String = binding.email.text.toString().trim()
         var password:String = binding.password.text.toString().trim()
+
+
 
         if(email.isEmpty()){
             binding.email.error = "Email is required!";

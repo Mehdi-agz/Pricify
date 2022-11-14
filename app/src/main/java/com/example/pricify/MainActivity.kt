@@ -24,7 +24,9 @@ class MainActivity : AppCompatActivity() {
         binding.loginBtn.setOnClickListener { launchLogin() }
         binding.signupBtn.setOnClickListener { launchRegister() }
 
-        if (FirebaseAuth.getInstance().currentUser != null) {
+
+
+        if (FirebaseAuth.getInstance().currentUser != null && FirebaseAuth.getInstance().currentUser!!.isEmailVerified) {
             launchHome();
             return;
         }
