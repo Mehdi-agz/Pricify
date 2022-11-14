@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pricify.databinding.ActivityAddItemBinding
-import android.widget.CheckBox
 
 
 class AddItemActivity : AppCompatActivity() {

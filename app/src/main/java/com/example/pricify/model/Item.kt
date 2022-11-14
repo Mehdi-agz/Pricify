@@ -5,6 +5,7 @@ import androidx.annotation.DrawableRes
 data class Item (
     @DrawableRes val imageResourceId: Int,
     val name: String,
+    val url: String,
     val price: Int,
     val priceDrop: Int,
 )

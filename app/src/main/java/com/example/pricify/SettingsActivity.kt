@@ -21,7 +21,6 @@ class SettingsActivity : AppCompatActivity() {
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.profileBtn.setOnClickListener {launchProfile()}
-        binding.ordersBtn.setOnClickListener {launchOrders()}
         binding.paymentBtn.setOnClickListener {launchPayments()}
         binding.accPrivacyBtn.setOnClickListener {launchAccount()}
 
@@ -35,10 +34,6 @@ class SettingsActivity : AppCompatActivity() {
 
     private fun launchPayments() {
         scaler(binding.paymentBtn)
-    }
-
-    private fun launchOrders() {
-        scaler(binding.ordersBtn)
     }
 
     private fun launchProfile() {

@@ -17,15 +17,6 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <Button
-        android:id="@+id/orders_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/orders_btn"
-        android:minWidth="250dp"
-        app:layout_constraintStart_toStartOf="@id/profile_btn"
-        app:layout_constraintTop_toBottomOf="@id/profile_btn"
-        />
 
     <Button
         android:id="@+id/payment_btn"
@@ -33,8 +24,8 @@
         android:layout_height="wrap_content"
         android:text="@string/payment_btn"
         android:minWidth="250dp"
-        app:layout_constraintStart_toStartOf="@id/orders_btn"
-        app:layout_constraintTop_toBottomOf="@id/orders_btn"
+        app:layout_constraintStart_toStartOf="@id/profile_btn"
+        app:layout_constraintTop_toBottomOf="@id/profile_btn"
         />
 
     <Button

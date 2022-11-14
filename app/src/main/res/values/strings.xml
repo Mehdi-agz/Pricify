@@ -38,8 +38,9 @@
     <string name="save">Save</string>
     <string name="item_url">Item URL</string>
     <string name="monitor_price">Monitor Price Change</string>
-    <string name="enter_price">Enter Price</string>
+    <string name="enter_price">Item Price</string>
     <string name="enter_price_drop">Price drop threshold</string>
+    <string name="item_image_url">Item Image URL</string>
 
 
 </resources>
