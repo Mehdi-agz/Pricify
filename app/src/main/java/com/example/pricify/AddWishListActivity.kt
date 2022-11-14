@@ -28,8 +28,6 @@ class AddWishListActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.saveBtn.setOnClickListener { addWishlist() }
 
-        // showing the back button in action bar
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun addWishlist() {

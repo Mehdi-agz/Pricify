@@ -25,8 +25,6 @@ class WishListsActivity : AppCompatActivity() {
 
 //        binding.single_wishlist_btn.setOnClickListener { launchWishlist() }
         binding.addWishlist.setOnClickListener { launchAddWishlist() }
-        // showing the back button in action bar
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 
     }

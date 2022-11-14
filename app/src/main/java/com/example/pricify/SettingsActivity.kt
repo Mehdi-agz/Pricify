@@ -23,9 +23,6 @@ class SettingsActivity : AppCompatActivity() {
         binding.profileBtn.setOnClickListener {launchProfile()}
         binding.paymentBtn.setOnClickListener {launchPayments()}
         binding.accPrivacyBtn.setOnClickListener {launchAccount()}
-
-        // showing the back button in action bar
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun launchAccount() {

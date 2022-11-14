@@ -34,13 +34,11 @@ class SWishListActivity : AppCompatActivity() {
 
         binding.addItem.setOnClickListener { launchAddItem() }
 
-        // Enable up button for backward navigation
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
     }
 
     private fun launchAddItem() {
         listIntent = Intent(this, AddItemActivity::class.java)
+        listIntent.putExtra("WishlistName", name)
         startActivity(listIntent)
     }
 

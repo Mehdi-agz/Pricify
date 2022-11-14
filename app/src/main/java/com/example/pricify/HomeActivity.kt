@@ -53,6 +53,7 @@ class HomeActivity : AppCompatActivity(){
             }
 
         })
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
     }
 

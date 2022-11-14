@@ -51,7 +51,6 @@ class ProfileActivity : AppCompatActivity() {
             }
 
         })
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
     }
 }
