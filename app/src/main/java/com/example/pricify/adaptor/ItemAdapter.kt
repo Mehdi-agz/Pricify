@@ -61,7 +61,10 @@ class ItemAdapter(
         holder.item_price.text = resources?.getString(R.string.item_price, item.price)
         holder.item_price_drop.text = resources?.getString(R.string.price_drop, item.priceDrop)
 
-        val url = wishlists[index].items[position].imageUrl
+        var url = wishlists[index].items[position].imageUrl
+        if (url.isEmpty()) {
+            url = resources!!.getString(R.string.empty_img_url)
+        }
         Picasso.with(holder.itemView.context).load(url).into(holder.item_image)
 
         holder.item_image.setOnClickListener {
