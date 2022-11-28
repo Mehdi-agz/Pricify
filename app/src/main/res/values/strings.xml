@@ -43,6 +43,7 @@
     <string name="item_image_url">Item Image URL</string>
     <string name="feedback_btn">Feedback</string>
     <string name="empty_img_url">https://cdn-icons-png.flaticon.com/512/1201/1201867.png</string>
+    <string name="delete_item">Delete Item</string>
 
 
 </resources>
