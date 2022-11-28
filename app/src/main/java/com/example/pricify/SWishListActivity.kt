@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 
-class SWishListActivity : AppCompatActivity() {
+class SWishListActivity : AppCompatActivity(), RefreshDataInterface {
     private lateinit var binding: ActivityItemsBinding
     private lateinit var listIntent: Intent
 
@@ -41,7 +41,7 @@ class SWishListActivity : AppCompatActivity() {
 
         // passes concert data to new recycler view
         binding.itemsVerticalRecyclerView.adapter = ItemAdapter(
-            applicationContext, name, index
+            applicationContext, name, index, this
         )
 
         binding.addItem.setOnClickListener { launchAddItem() }
@@ -49,12 +49,13 @@ class SWishListActivity : AppCompatActivity() {
     }
     override fun onResume() {
         super.onResume()
-        getWishlistData()
+        refreshData()
     }
 
 
-    fun getWishlistData(){
+    override fun refreshData(){
         val dbref = FirebaseDatabase.getInstance().getReference("Wishlists").child(FirebaseAuth.getInstance().currentUser!!.uid).ref
+        val getDataInterface = this
         dbref.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 DataSource.wishlists.clear()
@@ -77,7 +78,7 @@ class SWishListActivity : AppCompatActivity() {
                     }
                 }
                 adaptor = ItemAdapter(
-                    applicationContext, name, index
+                    applicationContext, name, index, getDataInterface
                 )
                 binding.itemsVerticalRecyclerView.adapter = adaptor
                 adaptor!!.notifyDataSetChanged()

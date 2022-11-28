@@ -14,7 +14,11 @@ import com.example.pricify.model.Wishlist
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
-class WishListsActivity : AppCompatActivity() {
+interface RefreshDataInterface{
+    fun refreshData();
+}
+
+class WishListsActivity : AppCompatActivity(), RefreshDataInterface {
 
     private lateinit var binding: ActivityWishlistsBinding
     private lateinit var listIntent: Intent
@@ -39,12 +43,13 @@ class WishListsActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        getWishlistData()
+        refreshData()
     }
 
 
-        fun getWishlistData(){
+    override fun refreshData(){
         val dbref = FirebaseDatabase.getInstance().getReference("Wishlists").child(FirebaseAuth.getInstance().currentUser!!.uid).ref
+        val getDataInterface = this
         dbref.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 DataSource.wishlists.clear()
@@ -67,7 +72,7 @@ class WishListsActivity : AppCompatActivity() {
                     }
                 }
                 adaptor = WishlistsAdaptor(
-                    applicationContext
+                    applicationContext, getDataInterface
                 )
                 binding.wishlistsVerticalRecyclerView.adapter = adaptor
 

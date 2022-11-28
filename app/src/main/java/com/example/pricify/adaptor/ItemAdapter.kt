@@ -12,16 +12,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.widget.AppCompatDrawableManager.get
+import androidx.appcompat.widget.AppCompatImageButton
 import androidx.appcompat.widget.ResourceManagerInternal.get
 import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.ViewTreeLifecycleOwner.get
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pricify.R
+import com.example.pricify.RefreshDataInterface
 import com.example.pricify.SWishListActivity
 import com.example.pricify.data.DataSource
 import com.example.pricify.data.DataSource.wishlists
+import com.example.pricify.databinding.ActivityItemsBinding
 import com.example.pricify.model.Item
 import com.example.pricify.model.Wishlist
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
 import java.lang.reflect.Array.get
 
@@ -31,20 +36,48 @@ class ItemAdapter(
     val context: Context?,
     val name: String,
     private val index: Int,
-    var wishlists: MutableList<Wishlist> = DataSource.wishlists,
+    val dataInterface: RefreshDataInterface,
+    var wishlists: MutableList<Wishlist> = DataSource.wishlists
 
 
 ): RecyclerView.Adapter<ItemAdapter.WishItemViewHolder>() {
 
 
-    class WishItemViewHolder(view: View?): RecyclerView.ViewHolder(view!!) {
+    inner class WishItemViewHolder(view: View?): RecyclerView.ViewHolder(view!!) {
         val item_image: ImageButton = view!!.findViewById(R.id.item_image)
         val item_name: TextView = view!!.findViewById(R.id.item_name)
         val item_price: TextView = view!!.findViewById(R.id.item_price)
         val item_price_drop: TextView = view!!.findViewById(R.id.item_price_drop)
+        val removeButton: AppCompatImageButton = view!!.findViewById(R.id.delete_image)
+        val wishListName : String = wishlists[index].name
+        init {
+            removeButton.setOnClickListener{
+                removeItem(view, dataInterface,wishListName,item_name.text.toString())
+            }
+        }
+        private fun removeItem(view: View?, dataInterface: RefreshDataInterface, wishlistName:String, itemName:String) {
+            FirebaseDatabase.getInstance().getReference("Wishlists").child(
+                FirebaseAuth.getInstance().currentUser!!.uid
+            ).child(wishlistName).child(itemName).ref.removeValue().addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(
+                        view!!.context,
+                        "Wishlist removed!",
+                        Toast.LENGTH_LONG
+                    ).show()
+                    dataInterface.refreshData()
+                } else {
+                    Toast.makeText(
+                        view!!.context,
+                        task.exception?.message ?: "Exception without message",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+        }
 
-    }
 
+}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WishItemViewHolder {
 
