@@ -68,10 +68,17 @@ class ItemAdapter(
         Picasso.with(holder.itemView.context).load(url).into(holder.item_image)
 
         holder.item_image.setOnClickListener {
-            val myUrl = Intent(Intent.ACTION_VIEW)
-            myUrl.data = Uri.parse(item.url)
-            holder.itemView.context.startActivity(myUrl)
+            if(isValid(item.url)) {
+                val myUrl = Intent(Intent.ACTION_VIEW)
+                myUrl.data = Uri.parse(item.url)
+                holder.itemView.context.startActivity(myUrl)
+            }
         }
+    }
+
+    private fun isValid(url : String) : Boolean {
+        val isURL = "((http|https)://)(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)".toRegex()
+        return isURL.containsMatchIn(url)
     }
 
 
