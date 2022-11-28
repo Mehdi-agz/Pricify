@@ -87,7 +87,8 @@
             android:id="@+id/item_price_input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="number" />
+            android:maxLength="5"
+            android:inputType="numberDecimal" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -113,7 +114,8 @@
             android:id="@+id/price_drop_input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="number" />
+            android:maxLength="5"
+            android:inputType="numberDecimal" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

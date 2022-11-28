@@ -48,7 +48,7 @@ class AddItemActivity : AppCompatActivity() {
         var itemUrl:String = binding.itemUrlInput.text.toString().trim()
         var imageUrl:String = binding.itemImageUrlInput.text.toString().trim()
         val p = binding.itemPriceInput.text.toString().trim()
-        var price:Double = if(p.isEmpty()) 0.0 else p.toDouble()
+        var price:Double = if(p.isEmpty()) 0.00 else p.toDouble()
         var targetPriceDrop:Double = if(!binding.checkbox.isChecked) -1.0 else if (binding.priceDropInput.text.toString().isEmpty()) -1.0 else  binding.priceDropInput.text.toString().trim().toDouble()
 
         var exception = false
