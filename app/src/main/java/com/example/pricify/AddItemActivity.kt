@@ -48,7 +48,7 @@ class AddItemActivity : AppCompatActivity() {
         var itemUrl:String = binding.itemUrlInput.text.toString().trim()
         var imageUrl:String = binding.itemImageUrlInput.text.toString().trim()
         var price:Double = binding.itemPriceInput.text.toString().trim().toDouble()
-        var targetPriceDrop:Double = if(binding.checkbox.isChecked) -1.0 else binding.priceDropInput.text.toString().trim().toDouble()
+        var targetPriceDrop:Double = if(!binding.checkbox.isChecked) -1.0 else if (binding.priceDropInput.text.toString().isEmpty()) -1.0 else  binding.priceDropInput.text.toString().trim().toDouble()
 
         if(name.isEmpty()){
             binding.nameInput.error = "Item name is required!";
