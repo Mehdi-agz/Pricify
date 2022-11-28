@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        if (FirebaseAuth.getInstance().currentUser != null && FirebaseAuth.getInstance().currentUser!!.isEmailVerified) {
+        if (FirebaseAuth.getInstance().currentUser != null) {
             launchHome();
             return;
         }

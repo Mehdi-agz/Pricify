@@ -89,19 +89,19 @@ class LoginActivity: AppCompatActivity(){
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener{task->
             if(task.isSuccessful){
                 var user: FirebaseUser? = FirebaseAuth.getInstance().currentUser;
-                if(user!!.isEmailVerified){
+                //if(user!!.isEmailVerified){
                     launchHome()
-                }else{
-                    user.sendEmailVerification().addOnCompleteListener{ task2->
-                        if(task2.isSuccessful){
-                            Toast.makeText(this, "Check your email to verify your account!", Toast.LENGTH_LONG).show()
-                        }else{
-                            Toast.makeText(this, "Error sending verification email! " + task2.exception!!.message.toString(), Toast.LENGTH_LONG).show()
-                        }
-                        binding.progressBar.visibility = View.GONE
-                    };
+//                }else{
+//                    user.sendEmailVerification().addOnCompleteListener{ task2->
+//                        if(task2.isSuccessful){
+//                            Toast.makeText(this, "Check your email to verify your account!", Toast.LENGTH_LONG).show()
+//                        }else{
+//                            Toast.makeText(this, "Error sending verification email! " + task2.exception!!.message.toString(), Toast.LENGTH_LONG).show()
+//                        }
+//                        binding.progressBar.visibility = View.GONE
+//                    };
 
-                }
+                //}
             }else{
                 Toast.makeText(
                     this,
