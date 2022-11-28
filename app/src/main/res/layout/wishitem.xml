@@ -33,7 +33,7 @@
             android:id="@+id/item_image"
             style="@style/Widget.AppCompat.ImageButton"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="275dp"
             android:contentDescription="@string/item_name"
             android:scaleType="centerCrop"
             android:background="#0000"
@@ -41,6 +41,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             />
+
+        <ImageButton
+            android:id="@+id/delete_image"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/delete_item"
+            android:scaleType="centerInside"
+            android:background="#0000"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.98"
+            android:src="@drawable/remove2"
+            />
+
 
         <TextView
             android:id="@+id/item_name"
