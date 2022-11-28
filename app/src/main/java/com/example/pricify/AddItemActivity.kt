@@ -43,37 +43,42 @@ class AddItemActivity : AppCompatActivity() {
 
     }
 
-    private fun addItem(){
+    private fun addItem() {
         var name:String = binding.nameInput.text.toString().trim()
         var itemUrl:String = binding.itemUrlInput.text.toString().trim()
         var imageUrl:String = binding.itemImageUrlInput.text.toString().trim()
-        var price:Double = binding.itemPriceInput.text.toString().trim().toDouble()
+        val p = binding.itemPriceInput.text.toString().trim()
+        var price:Double = if(p.isEmpty()) 0.0 else p.toDouble()
         var targetPriceDrop:Double = if(!binding.checkbox.isChecked) -1.0 else if (binding.priceDropInput.text.toString().isEmpty()) -1.0 else  binding.priceDropInput.text.toString().trim().toDouble()
 
+        var exception = false
         if(name.isEmpty()){
             binding.nameInput.error = "Item name is required!";
             binding.nameInput.requestFocus();
-            return;
+            exception = true
         }
         if(itemUrl.isEmpty()){
-            binding.nameInput.error = "Item url is required!";
-            binding.nameInput.requestFocus();
-            return;
+            binding.itemUrlInput.error = "Item url is required!";
+            binding.itemUrlInput.requestFocus()
+            exception = true
         }
         if(imageUrl.isEmpty()){
-            binding.nameInput.error = "Image url is required!";
-            binding.nameInput.requestFocus();
-            return;
+            binding.itemImageUrlInput.error = "Image url is required!";
+            binding.itemImageUrlInput.requestFocus()
+            exception = true
         }
-        if(price <=0.0){
-            binding.nameInput.error = "Valid price is required!";
-            binding.nameInput.requestFocus();
-            return;
+        if(price <= 0.0){
+            binding.itemPriceInput.error = "Valid price is required!";
+            binding.itemPriceInput.requestFocus()
+            exception = true
         }
         if(targetPriceDrop==0.0){
-            binding.nameInput.error = "Valid price drop is required!";
-            binding.nameInput.requestFocus();
-            return;
+            binding.itemPriceDrop.error = "Valid price drop is required!";
+            binding.itemPriceDrop.requestFocus()
+            exception = true
+        }
+        if (exception) {
+            return
         }
 
         val userWishlistRef = FirebaseDatabase.getInstance().getReference("Wishlists").child(

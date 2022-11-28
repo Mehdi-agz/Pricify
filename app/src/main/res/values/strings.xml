@@ -42,6 +42,7 @@
     <string name="enter_price_drop">Price drop threshold</string>
     <string name="item_image_url">Item Image URL</string>
     <string name="feedback_btn">Feedback</string>
+    <string name="empty_img_url">https://cdn-icons-png.flaticon.com/512/1201/1201867.png</string>
 
 
 </resources>
