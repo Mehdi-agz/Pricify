@@ -16,9 +16,6 @@
             android:name=".ProfileActivity"
             android:exported="false">
         </activity>
-        <activity android:name=".FeedbackActivity">
-
-        </activity>
         <activity android:name=".AddItemActivity">
 
         </activity>
