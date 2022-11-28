@@ -22,9 +22,9 @@
         android:id="@+id/wishlists_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="300dp"
-        android:minWidth="150dp"
-        android:minHeight="100dp"
+        android:layout_marginBottom="400dp"
+        android:minWidth="250dp"
+        android:minHeight="50dp"
         android:text="@string/wishlists_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,23 +32,36 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/settings_btn"
+        android:id="@+id/profile_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/settings_btn"
-        android:minWidth="150dp"
-        android:minHeight="100dp"
+        android:text="@string/profile_btn"
+        android:layout_marginBottom="400dp"
+        android:minWidth="250dp"
+        android:minHeight="50dp"
         app:layout_constraintStart_toStartOf="@id/wishlists_btn"
         app:layout_constraintTop_toBottomOf="@id/wishlists_btn" />
+
+    <Button
+        android:id="@+id/feedback_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/feedback_btn"
+        android:layout_marginBottom="400dp"
+        android:minWidth="250dp"
+        android:minHeight="50dp"
+        app:layout_constraintStart_toStartOf="@id/profile_btn"
+        app:layout_constraintTop_toBottomOf="@id/profile_btn" />
 
     <Button
         android:id="@+id/logout_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/logout_btn"
-        android:minWidth="150dp"
-        android:minHeight="100dp"
-        app:layout_constraintStart_toStartOf="@id/settings_btn"
-        app:layout_constraintTop_toBottomOf="@id/settings_btn" />
+        android:layout_marginBottom="400dp"
+        android:minWidth="250dp"
+        android:minHeight="50dp"
+        app:layout_constraintStart_toStartOf="@id/feedback_btn"
+        app:layout_constraintTop_toBottomOf="@id/feedback_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.animation.PropertyValuesHolder
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -34,7 +35,8 @@ class HomeActivity : AppCompatActivity(){
         binding.wishlistsBtn.setOnClickListener { launchWishLists() }
 
         binding.logoutBtn.setOnClickListener { logOut() }
-        binding.settingsBtn.setOnClickListener { lunchSettings() }
+        binding.profileBtn.setOnClickListener { lunchProfile() }
+        binding.feedbackBtn.setOnClickListener { lunchFeedback() }
         greeting = findViewById(R.id.greetingMessage)
         user = FirebaseAuth.getInstance().currentUser!!
         reference = FirebaseDatabase.getInstance().getReference("Users");
@@ -101,9 +103,17 @@ class HomeActivity : AppCompatActivity(){
     }
 
 
-    private fun lunchSettings() {
-        scaler(binding.settingsBtn)
-        var intent = Intent(this, SettingsActivity::class.java)
+    private fun lunchFeedback() {
+        scaler(binding.profileBtn)
+        val url = "https://docs.google.com/forms/d/e/1FAIpQLSd3DCw8xqWSzQDY25Blc--_eWKInZg_k9c7Y76f-ShgU4Y0CQ/viewform"
+        val myUrl = Intent(Intent.ACTION_VIEW)
+        myUrl.data = Uri.parse(url)
+        startActivity(myUrl)
+    }
+
+    private fun lunchProfile() {
+        scaler(binding.profileBtn)
+        var intent = Intent(this, ProfileActivity::class.java)
         startActivity(intent)
     }
 
@@ -114,8 +124,8 @@ class HomeActivity : AppCompatActivity(){
     }
 
     private fun scaler(btn: Button) {
-        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X,  1.5f, 1f, 1f)
-        val scaleY =  PropertyValuesHolder.ofFloat(View.SCALE_Y,  0.75f, 1f, 1f)
+        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X,  0.95f, 1f, 1f)
+        val scaleY =  PropertyValuesHolder.ofFloat(View.SCALE_Y,  1f, 1f, 1f)
         val animator = ObjectAnimator.ofPropertyValuesHolder(btn, scaleX, scaleY)
         animator.start()
 
