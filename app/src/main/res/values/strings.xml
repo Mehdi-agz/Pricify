@@ -30,9 +30,9 @@
     <string name="profileEmailAddressTitle">Email Address:</string>
     <string name="profileGreeting" />
     <string name="item_count">Item Count: %1$s</string>
-    <string name="total_price">Total Price: $%1$s</string>
-    <string name="item_price">Price: $%1$s</string>
-    <string name="price_drop">Price Drop: $%1$s</string>
+    <string name="total_price">Total Price: $%.2f</string>
+    <string name="item_price">Price: $%.2f</string>
+    <string name="price_drop">Price Drop: $%.2f</string>
     <string name="add_new_item">Add New Item</string>
     <string name="add_new_wishlist">Add New Wishlist</string>
     <string name="save">Save</string>
