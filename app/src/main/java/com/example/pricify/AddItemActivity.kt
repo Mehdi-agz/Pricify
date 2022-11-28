@@ -62,11 +62,6 @@ class AddItemActivity : AppCompatActivity() {
             binding.itemUrlInput.requestFocus()
             exception = true
         }
-        if(imageUrl.isEmpty()){
-            binding.itemImageUrlInput.error = "Image url is required!";
-            binding.itemImageUrlInput.requestFocus()
-            exception = true
-        }
         if(price <= 0.0){
             binding.itemPriceInput.error = "Valid price is required!";
             binding.itemPriceInput.requestFocus()
