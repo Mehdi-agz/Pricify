@@ -62,7 +62,7 @@ class ItemAdapter(
                 if (task.isSuccessful) {
                     Toast.makeText(
                         view!!.context,
-                        "Wishlist removed!",
+                        "Wishlist item removed!",
                         Toast.LENGTH_LONG
                     ).show()
                     dataInterface.refreshData()
